@@ -1,0 +1,20 @@
+@keyframes titleColorChange {
+  0% { color: white; }
+  10% { color: red; }
+  20% { color: orange; }
+  30% { color: yellow; }
+  40% { color: green; }
+  50% { color: blue; }
+  60% { color: indigo;}
+  70% { color: purple; }
+  80% { color: lavender; }
+  90% { color: pink;}
+  100% { color: lightgrey }
+}
+
+.blinkdiv {
+    height: 100px;
+    background-color: black;
+    animation: titleColorChange 5s infinite;
+    padding-top: 2%;
+}

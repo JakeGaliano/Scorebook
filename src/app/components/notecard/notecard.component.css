@@ -1,0 +1,101 @@
+/* Create new note element styles */
+#newNoteContainer {
+  background-color: green;
+  height: 100px;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.521);
+  transition: 0.3s;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#newNoteContainer:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.521);
+  cursor: pointer;
+}
+
+#newNoteCard {
+  color: white;
+  padding-top: 10%;
+}
+
+/* Existing note element styles */
+
+#noteContainer {
+  position: relative;
+  background-color: rgb(174, 196, 238);
+  height: 115px;
+  width: 100%;
+  padding-top: 5%;
+  margin-top: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.521);
+  transition: 0.3s;
+  border-radius: 25px;
+}
+
+#noteContainer:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.521);
+  cursor: pointer;
+}
+
+#noteBody {
+  background-color: white;
+  border-radius: 20px;
+  border-color: white;
+  resize: none;
+  font-size: 12px;
+  outline: none;
+  padding-left: 3px;
+}
+
+/* Edit button on note element styles */
+
+#editButton {
+  position: absolute;
+  top: 87px;
+  left: 15px;
+  width: 25%;
+  background-color: rgb(75, 226, 75);
+  color: black;
+  transition: 0.3s;
+  border: 0px;
+  border-radius: 5px;
+}
+
+#editButton:hover {
+  background-color: rgb(30, 173, 30);
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Note id of note element style */
+
+#noteId {
+  position: absolute;
+  top: 87px;
+  width: 2px;
+  left: 100px;
+}
+
+/* Delete button on note element styles */
+
+#deleteButton {
+  position: absolute;
+  top: 87px;
+  right: 15px;
+  width: 25%;
+  background-color: red;
+  color: black;
+  transition: 0.3s;
+  border: 0px;
+  border-radius: 5px;
+}
+
+#deleteButton:hover {
+  background-color: darkred;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}

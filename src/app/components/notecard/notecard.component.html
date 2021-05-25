@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row row-cols-auto align-items-start" style="padding-top: 1%;">
+    <div *ngFor="let note of notes">
+      <div class="col col-md-auto" id="noteContainer" [ngStyle]="{ 'background-color': checkSelected(note) ? 'yellow': '' }"
+      (click)="selectedNote(note)">
+        <div id="noteCard">
+          <textarea [readonly]="!checkEditable(note)" name="noteBody" id="noteBody" cols="27" rows="3" maxlength="255"
+          (blur)="saveNote(note)" [placeholder]="getRandomPlaceholder()"></textarea>
+          <button type="button" id="editButton" (click)="editNote(note)"><i class="fas fa-edit"></i></button>
+          <span id="noteId">{{note.id}}</span>
+          <button type="button" id="deleteButton" (click)="removeNote(note)"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-auto" id="newNoteContainer" (click)="addNewNote()">
+      <div id="newNoteCard">
+        <h5>+ Create New Note</h5>
+     </div>
+    </div>
+  </div>
+</div>
