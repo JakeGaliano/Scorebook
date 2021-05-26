@@ -1,5 +1,7 @@
 <div class="container-fluid">
+  <!-- Create a new row for every six notes -->
   <div class="row row-cols-auto align-items-start" style="padding-top: 1%;">
+    <!-- Read in notes from the notes array -->
     <div *ngFor="let note of notes">
       <div class="col col-md-auto" id="noteContainer" [ngStyle]="{ 'background-color': checkSelected(note) ? 'yellow': '' }"
       (click)="selectedNote(note)">
@@ -12,6 +14,7 @@
         </div>
       </div>
     </div>
+    <!-- Create New Note button -->
     <div class="col col-md-auto" id="newNoteContainer" (click)="addNewNote()">
       <div id="newNoteCard">
         <h5>+ Create New Note</h5>

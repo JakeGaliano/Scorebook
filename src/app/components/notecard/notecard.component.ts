@@ -58,7 +58,6 @@ export class NotecardComponent implements OnInit {
   }
 
   removeNote(note: any) {
-
     const index = this.notes.indexOf(note);
     const id = note['id'];
 
@@ -80,6 +79,7 @@ export class NotecardComponent implements OnInit {
   }
 
   checkEditable(note: any) {
+    /* check if note is edtiable or not */
     if(note.editable === true) {
       return true;
     } else {
@@ -88,17 +88,21 @@ export class NotecardComponent implements OnInit {
   }
 
   selectedNote(note: any) {
+    /* set note as editable or not */
     if(note.selected == false) {
       note.selected = true;
     } else {
       note.selected = false;
     }
 
+    /* set previous note as the current note if the previous note does not exist or if it is not selected */
     if(this.previousNote == undefined || this.previousNote.selected == false) {
       this.previousNote = note;
       return;
     }
 
+    /* logic to see if previous note and current note are selected in order to switch their places in the
+    notes array */
     if(this.previousNote != null && note.selected == true && this.previousNote.selected == true) {
       let previousIndex = this.notes.indexOf(this.previousNote);
       let currentIndex = this.notes.indexOf(note);
@@ -107,13 +111,11 @@ export class NotecardComponent implements OnInit {
       this.previousNote.selected = false;
       this.previousNote = undefined;
       note.selected = false;
-
-      console.log("Previous Note: ", this.previousNote);
-      console.log("Note: ", note);
     }
   }
 
   checkSelected(note: any) {
+    /* check to see if current note is selected */
     if(note.selected === true) {
       return true;
     } else {
@@ -122,6 +124,7 @@ export class NotecardComponent implements OnInit {
   }
 
   getRandomPlaceholder() {
+    /* select random placeholder from the placeholder array for each note */
     let random = Math.floor(Math.random() * 12);
     return this.placeholders[random];
   }
